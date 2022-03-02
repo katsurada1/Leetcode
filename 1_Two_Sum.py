@@ -1,6 +1,6 @@
-# s = len(nums)
-# time: O(s)
-# space: O(s)
+# n = len(nums)
+# time: O(n)
+# space: O(n)
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -11,9 +11,9 @@ class Solution:
         Returns:
             List[int]: The indices of the two numbers such that they add up to target.
         """
-        dict = defaultdict(int)
-        for i in range(len(nums)):
-            if target - nums[i] in dict:
-                return [dict[target - nums[i]],i]
+        nums_dict = defaultdict(int)
+        for i, num in enumerate(nums):
+            if target - num in nums_dict:
+                return [nums_dict[target - num],i]
                 
-            dict[nums[i]] = i
+            nums_dict[num] = i
