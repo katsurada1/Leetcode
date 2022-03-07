@@ -1,6 +1,6 @@
-# n = len(x)
+# n = log10(x)
 # time: O(n)
-# space: O(n)
+# space: O(1)
 
 class Solution(object):
     def isPalindrome(self, x: int) -> bool:
@@ -12,13 +12,11 @@ class Solution(object):
         """
 
         if x < 0:
-            return false
-        reverse = 0
-        i = x
-        while i > 0:
-            i //= 10
-            reverse = reverse * 10 + i % 10
-            return reverse
+            return False
         
-        if x == reverse:        
-                return True
+        number = x
+        reverse = 0
+        while number:
+            reverse = reverse * 10 + number % 10
+            number //= 10
+        return x == reverse
