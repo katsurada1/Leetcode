@@ -10,14 +10,16 @@ class Solution(object):
         Returns:
             bool: True if an input string is valid.
         """
-        stack = []
-        dict = {"]":"[", "}":"{", ")":"("}
+        stack = deque()
+        k_dict = {"]":"[", "}":"{", ")":"("}
         for char in s:
-            if char in dict.values():
+            if char in k_dict.values():
                 stack.append(char)
-            elif char in dict.keys():
-                if stack == [] or dict[char] != stack.pop():
+            elif char in k_dict.keys():
+                if stack == deque() or k_dict[char] != stack.pop():
                     return False
+                
             else:
                 return False
-        return stack == []
+            
+        return stack == deque()
