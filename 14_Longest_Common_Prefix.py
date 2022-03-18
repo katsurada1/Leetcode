@@ -1,5 +1,5 @@
 # n = len(s)
-# time: O(n)
+# time: O(n^2)
 # space: O(1)
 
 class Solution(object):
@@ -12,9 +12,11 @@ class Solution(object):
         """
         if not strs:
             return ""
-        s = min(strs,key=len)
+        
+        s = min(strs, key=len)
         for i, ch in enumerate(s):
             for other in strs:
                 if other[i] != ch:
                     return s[:i]
+        
         return s
