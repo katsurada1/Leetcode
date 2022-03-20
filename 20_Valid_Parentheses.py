@@ -1,6 +1,6 @@
 # n = len(s)
 # time: O(n)
-# space: O(1)
+# space: O(n)
 
 class Solution(object):
     def isValid(self, s: str) -> bool:
