@@ -13,6 +13,6 @@ class Solution(object):
         n = 0
         for i in range(len(nums)):
             if(nums[n] < nums[i]):
-                n+=1
-                nums[n]=nums[i]
-        return(n+1)
+                n += 1
+                nums[n] = nums[i]
+        return n + 1
