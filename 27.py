@@ -12,9 +12,9 @@ class Solution(object):
             int: The elements after removing the elements equal to val.
         """
         
-        n=0
-        for i in nums:
-            if i != val:
-                nums[n] = i
+        n = 0
+        for num in nums:
+            if num != val:
+                nums[n] = num
                 n += 1
         return n
