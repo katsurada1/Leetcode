@@ -1,4 +1,4 @@
-# n = len(haystack) - len(needle) + 1
+# n = len(haystack)
 # m = len(needle)
 # time: O(nm)
 # space: O(1)
@@ -13,7 +13,7 @@ class Solution(object):
             int: The index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack, or 0 if needle is an empty string.
         """
         
-        if len(needle) == 0:
+        if not needle:
             return 0
         
         for i in range(len(haystack) - len(needle) + 1):
