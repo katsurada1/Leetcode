@@ -11,9 +11,8 @@ class Solution(object):
             int: The length of the last word consisting of non-space characters in the string.
         """
         
-        l = s.split()
-        if l:
-            return len(l[-1])
-        
-        else:
+        r = s.split()
+        if not r:
             return 0
+        
+        return len(r[-1])
