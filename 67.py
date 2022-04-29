@@ -1,6 +1,6 @@
-# n = max(len(a)-1, len(b)-1)
+# n = max(len(a) + 1, len(b) + 1)
 # time: O(n)
-# space: O(1)
+# space: O(n)
 
 class Solution(object):
     def addBinary(self, a: str, b: str) -> str:
@@ -14,7 +14,7 @@ class Solution(object):
         
         i, j = len(a)-1, len(b)-1
         carry = 0
-        res = ""
+        res = []
         while i >= 0 or j >= 0 or carry:
             if i >= 0:
                 carry += int(a[i])
@@ -22,6 +22,6 @@ class Solution(object):
             if j >= 0:
                 carry += int(b[j])
                 j -= 1
-            res = str(carry % 2) + res
+            res.insert(0, str(carry % 2))
             carry //= 2
-        return res
+        return "".join(res)
