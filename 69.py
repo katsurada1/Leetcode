@@ -11,15 +11,14 @@ class Solution(object):
             int: The square root of x.
         """
         
-        s = 0
-        r = x
-        while s <= r:
-            mid = (s + r) // 2
-            if mid * mid <= x < (mid + 1) * (mid + 1):
+        low = 0
+        high = x
+        while low <= high:
+            mid = (low + high) // 2
+            if mid ** 2 <= x < (mid + 1) ** 2:
                 return mid
             
-            elif x < mid * mid:
-                r = mid - 1
-            
+            elif x < mid ** 2:
+                high = mid - 1
             else:
-                s = mid + 1
+                low = mid + 1
