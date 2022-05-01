@@ -10,11 +10,11 @@ class Solution(object):
             int: The numer of distinct way to climb to the top.
         """
         
-        a = 1
-        b = 1
+        step1 = 1
+        step2 = 1
         if n <= 0:
             return n
         
         for i in range(n):
-            a, b = b, a + b
-        return a
+            step1, step2 = step2, step1 + step2
+        return step1
