@@ -16,5 +16,5 @@ class Solution(object):
             return n
         
         for i in range(n):
-            a, b =b, a + b
+            a, b = b, a + b
         return a
