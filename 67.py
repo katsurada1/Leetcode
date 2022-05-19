@@ -22,6 +22,6 @@ class Solution(object):
             if j >= 0:
                 carry += int(b[j])
                 j -= 1
-            res.insert(0, str(carry % 2))
+            res.append(str(carry % 2))
             carry //= 2
-        return "".join(res)
+        return "".join(res[::-1])
