@@ -23,6 +23,7 @@ class Solution(object):
         
         if not root:
             return True
+
         return self.check(root.left, root.right)
         
     def check(self, left, right):
@@ -49,24 +50,22 @@ class Solution(object):
     #         bool: Whether a binary tree is a mirror of itself.
     #     """
         
-    #     if not root:
-    #         return False
+        # if not root:
+        #     return False
         
-    #     stack = collections.deque[(root.left, root.right)]
-    #     while stack:
-    #         l, r = stack.pop()
-    #         if not l and not r:
-    #             pass
+        # stack = deque([(root.left, root.right)])
+        # while stack:
+        #     left_node, right_node = stack.pop()
+        #     if not left_node and not right_node:
+        #         continue
             
-    #         elif not l or not r:
-    #             return False
+        #     if not left_node or not right_node:
+        #         return False
             
-    #         else:
-    #             if l.val != r.val:
-    #                 return False
+        #     if left_node.val != right_node.val:
+        #         return False
                 
-    #             stack.append((l.left, r.right))
-    #             stack.append((l.right, r.left))
-    #     return True
-            
+        #     stack.append((left_node.left, right_node.right))
+        #     stack.append((left_node.right, right_node.left))
+        # return True
             
