@@ -11,7 +11,7 @@
 
 
 class Solution(object):
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+    def isSameTree(self, p, q):
         """A function to to check if the roots of two binary trees are the same or not.
         Args:
             p (TreeNode):　A given the roots of a binary tree.
@@ -23,10 +23,10 @@ class Solution(object):
         if not p and not q:
             return True
         
-        elif not p or not q:
+        if not p or not q:
             return False
         
-        elif p.val != q.val:
+        if p.val != q.val:
             return False
         
         return self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
@@ -45,15 +45,14 @@ class Solution(object):
         # while stack:
         #     p, q = stack.pop()
         #     if not p and not q: 
-        #         pass
+        #         continue
             
-        #     elif not p or not q: 
+        #     if not p or not q: 
         #         return False
             
-        #     elif p.val != q.val: 
+        #     if p.val != q.val: 
         #         return False
             
-        #     else:
-        #         stack.append((p.left, q.left))
-        #         stack.append((p.right, q.right))
+        #     stack.append((p.left, q.left))
+        #     stack.append((p.right, q.right))
         # return True
